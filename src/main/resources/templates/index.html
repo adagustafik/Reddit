@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet"
+          th:href="@{/style.css}"
+          href="../static/style.css">
+    <meta charset="UTF-8">
+    <title>The Reddit Clone Application</title>
+</head>
+<body>
+    <a th:unless="${user}" th:href="@{/register}">REGISTER</a>
+    <a th:unless="${user}" th:href="@{/login}">LOGIN</a>
+    <a th:if="${user}" th:href="@{/logout}">LOGOUT</a>
+    <a th:if="${user}" th:href="@{/all}">All posts</a>
+    <a th:if="${user}" th:href="@{/my}">My posts</a>
+    <a th:if="${user}" th:href="@{/submit}">Submit new post</a>
+
+    <h1>Trending posts</h1>
+    <a th:if="${page > 0}" th:href="@{/(page=${page - 1})}">PREVIOUS</a>
+    <a th:if="${posts} and ${page < posts.getTotalPages() - 1}" th:href="@{/(page=${page + 1})}">NEXT</a>
+    <table th:if="${posts} and ${posts.getContent().size()}">
+        <tr th:each="post :${posts}" th:object="${post}">
+            <td th:text="*{votesCount}">votes</td>
+            <td th:if="${user}" ><a th:href="@{/vote/{id}/{up}(id=*{id}, up='true')}">+</a></td>
+            <td th:if="${user}"><a th:href="@{/vote/{id}/{up}(id=*{id}, up='false')}">-</a></td>
+            <td><a th:text="*{title}" th:href="*{url}">url</a></td>
+            <td th:text="${#temporals.format(post.added,'dd.MM.yyyy HH:mm')}">added</td>
+            <td th:if="${post.user}" th:text="${post.user.name}">submitted by</td>
+        </tr>
+    </table>
+</body>
+</html>

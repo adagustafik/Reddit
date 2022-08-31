@@ -1,0 +1,30 @@
+body {
+    margin-left: 20px;
+    width: 1200px;
+    font-size: larger;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+td {
+    padding: 10px;
+}
+
+input {
+    margin-top: 10px;
+}
+
+form {
+    text-align: center;
+
+}
+button {
+    margin-top: 20px;
+}
+
+.centered {
+    width: 600px;
+}

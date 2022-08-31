@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet"
+          th:href="@{/style.css}"
+          href="../static/style.css">
+    <meta charset="UTF-8">
+    <title>Submit New Post</title>
+</head>
+<body>
+    <div class="centered">
+        <h1>Submit a new post</h1>
+        <form th:object="${post}" th:action="@{/submit}" method="post">
+            <label th:for="title">Title:</label>
+            <input type="text" th:field="*{title}" autofocus>
+            <br>
+            <label th:for="url">URL:</label>
+            <input type="text" th:field="*{url}">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

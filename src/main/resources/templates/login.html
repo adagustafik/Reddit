@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet"
+          th:href="@{/style.css}"
+          href="../static/style.css">
+    <meta charset="UTF-8">
+    <title>Login / Register</title>
+</head>
+<body>
+    <div class="centered">
+        <h1>Login / Register</h1>
+        <form th:object = "${user}" th:method="post" th:action="@{/login}">
+            <label th:for="'name'">Username</label>
+            <input type="text" th:field="*{name}" autofocus required minlength="3" maxlength="16">
+            <br>
+            <label th:for="'password'">Password</label>
+            <input type="text" th:field="*{password}" required minlength="5" maxlength="30">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
