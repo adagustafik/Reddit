@@ -42,10 +42,10 @@ template engine
 @OneToMany -> Vote\
 @ManyToOne -> User
 
-**Vote**
+**Vote**\
 @ManyToOne -> User\
-@ManyToOne -> Post
-boolean up
+@ManyToOne -> Post\
+boolean up\
 boolean down
 
 ### Basic data flows
@@ -57,7 +57,7 @@ boolean down
       -> sending User & PageRequest to repo -> generate template/index
     - SHOW ALL POSTS: boolean myPost set to false -> redirect root
 
-* VOTING FUNCTIONALITY: PostController votePost @PathVariable id & boolean up ->  PostService votePost -> get Post, User from repos ->  
+* VOTING FUNCTIONALITY: PostController votePost @PathVariable id & boolean up ->  PostService votePost -> get Post, User from repos
 -> get Vote by Post & User from repo
     - save to DB new Vote(up, post, user) -> up/down set to true
     - OR voteAgain(up) & save Vote changes to DB -> up/down reset to false OR set to true
