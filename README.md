@@ -11,6 +11,7 @@ A simple reddit clone application, where users can create posts and upvote / dow
 
 ## Run app
 IntelliJ IDEA IDE - RUN Reddit/src/main/java/com.gfa.week19/Week19Application.java
+serving on localhost:8080/
 
 ## Tech Stack
 **Java 11**
