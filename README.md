@@ -4,10 +4,9 @@
 A simple reddit clone application, where users can create posts and upvote / downvote existing posts.
 
 1. Registration + Login/Logout
-2. Show posts from DB ordered by popularity
+2. Show TOP 10 posts per page ordered by popularity
 3. User is able vote posts up & down
 4. User can create new Post & list only his posts
-5. Implement pagination for displayed posts
 
 
 ## Run app
