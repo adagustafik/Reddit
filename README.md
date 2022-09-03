@@ -10,7 +10,7 @@ A simple reddit clone application, where users can create posts and upvote / dow
 
 
 ## Run app
-IntelliJ IDEA IDE - RUN Reddit/src/main/java/cam.gfa.week19/Week19Application.java
+IntelliJ IDEA IDE - RUN Reddit/src/main/java/com.gfa.week19/Week19Application.java
 
 ## Tech Stack
 **Java 11**
