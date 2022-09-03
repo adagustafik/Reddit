@@ -57,20 +57,20 @@ boolean down
       -> sending User & PageRequest to repo -> generate template/index
     - SHOW ALL POSTS: boolean myPost set to false -> redirect root
 
-* VOTING FUNCTIONALITY: PostController votePost @PathVariable id & boolean up ->  PostService votePost -> get Post, User from repos
+* VOTING FUNCTIONALITY: PostController votePost @PathVariable id & boolean up ->  PostService votePost -> get Post, get User from repos
 -> get Vote by Post & User from repo
     - save to DB new Vote(up, post, user) -> up/down set to true
     - OR voteAgain(up) & save Vote changes to DB -> up/down reset to false OR set to true
     - update Post voteCount & save Post changes to DB (voteCount needed for Post sorting)
-    - -> redirect root
+    - redirect root
 
 
 ## Lessons learned  
 1. AutContext @SessionScope used to store logged in User
-2. @Setter(AccessLevel.NONE) to turn off Lombok auto-generators
-3. Pagination & Sorting -> providing Pageable (PageRequest.of(offset, limit)) & returning Page
-4. Writing native @Query with dynamic @Param for JpaRepository
-5. Atomic @Modifying update @Query 
-6. Removing data with relationship to a persisting Entity (on delete Foreign Key reset to NULL)
+2. Pagination & Sorting -> providing Pageable - PageRequest.of(offset, limit) & returning Page
+3. Writing native @Query with dynamic @Param for JpaRepository
+4. Atomic @Modifying update @Query 
+5. Removing data with relationship to a persisting Entity (on delete Foreign Key reset to NULL)
+6. @Setter(AccessLevel.NONE) to turn off Lombok auto-generators
 7. Thymeleaf - working with Page & setting up Pagination (getTotalPages, getContent)
 8. Thymeleaf - #temporals for displaying LocalDateTime format
